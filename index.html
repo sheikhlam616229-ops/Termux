@@ -29,9 +29,9 @@
         
         <input type="text" id="url" placeholder="Paste Video Link Here...">
         
-        <button class="btn-normal" onclick="downloadNormal()">⚡ DOWNLOAD NORMAL (MAX 720P)</button>
+        <button class="btn-normal" onclick="window.location.href='https://snapsave.app/search?url=' + encodeURIComponent(document.getElementById('url').value)">⚡ DOWNLOAD NORMAL (MAX 720P)</button>
         
-        <button class="btn-premium" onclick="downloadPremium()">
+        <button class="btn-premium" onclick="window.location.href='https://gplinks.co/bDpYz?url=' + encodeURIComponent(document.getElementById('url').value)">
             <span class="popular-tag">POPULAR</span>
             💎 DOWNLOAD PREMIUM (1080P / 4K UHD)
         </button>
@@ -40,21 +40,5 @@
             <p>Created with 👑 by <strong>Sheikh Lam</strong></p>
         </footer>
     </div>
-
-    <script>
-        function downloadNormal() {
-            var url = document.getElementById('url').value;
-            if(url) { 
-                window.location.href = "https://snapsave.app/search?url=" + encodeURIComponent(url); 
-            } else { alert("Link den boss!"); }
-        }
-
-        function downloadPremium() {
-            var url = document.getElementById('url').value;
-            if(url) { 
-                window.location.href = "https://gplinks.co/bDpYz?url=" + encodeURIComponent(url); 
-            } else { alert("Link den boss!"); }
-        }
-    </script>
 </body>
 </html>
