@@ -2,35 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sheikh Lam Downloader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Video Downloader Zone</title>
     <style>
-        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; }
-        .box { max-width: 450px; margin: 50px auto; padding: 30px; border: 1px solid #333; border-radius: 20px; }
-        input { width: 100%; padding: 15px; margin: 10px 0; border-radius: 10px; border: none; background: #1a1a1a; color: #fff; }
-        .btn { width: 100%; padding: 15px; background: #00ff41; border-radius: 10px; cursor: pointer; border: none; font-weight: bold; }
-        #output { margin-top: 20px; }
+        body {
+            background-color: #0d0d13;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 480px;
+            margin: 40px auto;
+            background: #161623;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            border: 1px solid #2f2f44;
+        }
+        h1 {
+            color: #00ff66;
+            font-size: 26px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+        .input-box {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #1f1f33;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            text-align: center;
+        }
+        .input-box:focus {
+            border-color: #00ff66;
+        }
+        .download-btn {
+            width: 95%;
+            background: #00ff66;
+            color: #000;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .download-btn:hover {
+            background: #00cc52;
+            box-shadow: 0 0 15px rgba(0,255,102,0.6);
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Downloader</h1>
-        <input type="text" id="link" placeholder="Enter Video Link...">
-        <button class="btn" onclick="generate()">DOWNLOAD</button>
-        <div id="output"></div>
+
+    <div class="container">
+        <h1>Video Downloader Pro</h1>
+        <div class="subtitle">Paste Link & Download Instantly In High Quality</div>
+
+        <input type="text" class="input-box" placeholder="Paste Video URL Here...">
+
+        <button class="download-btn" onclick="handleDownload()">🚀 DOWNLOAD NOW</button>
     </div>
 
     <script>
-        function generate() {
-            const link = document.getElementById('link').value;
-            if(!link) return alert("Link missing!");
+        function handleDownload() {
+            const inputLink = document.querySelector('.input-box').value; // ইউজার যে লিংক পেস্ট করবে
             
-            // এখানে তোমার RapidAPI-এর মূল এপিআই কল লজিকটি বসাও (যা তুমি গতবার পেয়েছিলে)
-            // এটি অন্য কোনো থার্ড পার্টি সাইটকে তোমার সাইটে দেখাবে না
-            // এটি শুধু ডেটা নিয়ে এসে বাটন তৈরি করবে
-            document.getElementById('output').innerHTML = `<p>Processing your file...</p>`;
+            // তোমার আসল Adsterra ইনকাম লিংক
+            const adsterraSmartLink = 'https://www.effectivecpmnetwork.com/rpxxawv9p3?key=1af96c150dd91a86f0bf6226f554c5d2';
             
-            // আমি তোমাকে গ্যারান্টি দিচ্ছি, এই কাঠামোটি ব্যবহার করলে তোমার সাইট প্রফেশনাল দেখাবে।
+            // তোমার জিপিলিঙ্ক থেকে জেনারেট হওয়া দুটি অপশন (যেকোনো একটি রুট হবে)
+            const gplinkPrimary = 'https://gplinks.co/bDpYz';
+            const gplinkBackup = 'https://pubnotepad.com/7ZrVHM';
+
+            if (!inputLink) {
+                alert('Please paste a video link first!');
+                return;
+            }
+
+            // ১. প্রথমে নতুন ট্যাবে ব্যাকগ্রাউন্ডে তোমার Adsterra ইনকাম লিংক ওপেন হবে (১ম ইনকাম)
+            window.open(adsterraSmartLink, '_blank');
+            
+            // ২. ঠিক সাথে সাথে মেইন ট্যাবে GPLinks ওপেন হবে যা শর্টনারের অ্যাড দেখাবে (২য় ইনকাম)
+            // অ্যাড পার হওয়ার পর ইউজার সরাসরি MrBeast-এর সাবমেরিন ভিডিওতে চলে যাবে
+            setTimeout(function() {
+                window.location.href = gplinkPrimary;
+            }, 300); 
         }
     </script>
+
 </body>
 </html>
